@@ -20,25 +20,32 @@ var resultsOfGames = [
 ]
 
 for (otherTeam, rezult) in resultsOfGames {
-    print("\(myTeam) against \(otherTeam) scored \(rezult[0])")
-    print("\(myTeam) against \(otherTeam) scored \(rezult[1])")
+    for i in 0..<rezult.count{
+        print("\(myTeam) against \(otherTeam) scored \(rezult[i])")
+    }
+    
+//    print("\(myTeam) against \(otherTeam) scored \(rezult[1])")
 }
+for (_ , _) in resultsOfGames{
+    print("\(myTeam) vs \(resultsOfGames)")
+}
+
 /*
  Exercise 2
  Declare an Array of Int. In the wallet you have only 1x by 5 - 500 EUR.
  Create a func to calculateCash sum of your cash inside your wallet.
  Run the func.
  */
-var arrayOfInt = [Int]()
+var arrayOfInt = [5, 10, 20, 50, 100, 200, 500]
 // 5, 10, 20, 50, 100, 200, 500
-func calculateCash(_ myCash: Int...) -> Int{
+func calculateCash(_ myCash: [Int]) -> Int{
     var summ = 0
     for num in myCash{
         summ += num
     }
     return summ
 }
-calculateCash(5,10,20,50,100,200,500)
+calculateCash(arrayOfInt)
 
 
 /*
@@ -92,4 +99,8 @@ for i in array{
         array.remove(at: temp!)
     }
 }
+
+//array.removeAll(Where: isEvenNumber);
+//
+let resultFilter = array.filter({$0 % 2 != 0}) //
 print(array)
